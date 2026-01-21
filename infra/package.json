@@ -1,0 +1,26 @@
+{
+  "name": "infra",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --all",
+    "deploy:frontend": "cdk deploy FrontendStack",
+    "deploy:api": "cdk deploy ApiStack",
+    "destroy": "cdk destroy --all",
+    "diff": "cdk diff",
+    "test": "jest"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.170.0",
+    "constructs": "^10.4.2",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "aws-cdk": "^2.170.0",
+    "typescript": "~5.6.3"
+  }
+}

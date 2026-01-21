@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.js
+*.d.ts
+!jest.config.js
+
+# CDK
+cdk.out/
+.cdk.staging/
+
+# Frontend
+frontend/build/
+frontend/.env.local
+
+# Backend
+backend/build/
+backend/.gradle/
+backend/out/
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
