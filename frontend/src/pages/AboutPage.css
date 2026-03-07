@@ -1,0 +1,44 @@
+.skills-heading {
+  font-size: 1.5rem;
+  color: #415a77;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skills {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.skills h3 {
+  color: #415a77;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.skills ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills li {
+  background: linear-gradient(135deg, #415a7715 0%, #778da915 100%);
+  border: 1px solid #415a7730;
+  color: #1b263b;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skills li:hover {
+  background: linear-gradient(135deg, #415a7725 0%, #778da925 100%);
+  border-color: #415a7750;
+  transform: translateY(-1px);
+}

@@ -8,7 +8,7 @@ export const config = {
    * Your primary domain name (e.g., 'example.com')
    * Set to undefined if you don't have a custom domain yet
    */
-  domainName: undefined as string | undefined,
+  domainName: 'rohitshetty.link',
 
   /**
    * Subdomain for the API (e.g., 'api' for api.example.com)

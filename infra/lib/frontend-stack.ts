@@ -32,7 +32,7 @@ export class FrontendStack extends cdk.Stack {
     // S3 bucket configured for static website hosting
     // Public access is required for S3 website endpoints
     this.bucket = new s3.Bucket(this, 'FrontendBucket', {
-      bucketName: `my-website-frontend-${this.account}-${this.region}`,
+      bucketName: domainName || `my-website-frontend-${this.account}-${this.region}`,
       // Allow public read access for static website hosting
       blockPublicAccess: new s3.BlockPublicAccess({
         blockPublicAcls: false,

@@ -19,13 +19,13 @@ const apiDomainName = getApiDomainName();
 
 // Certificate Stack for API Gateway custom domain (only if domain is configured)
 let certificateStack: CertificateStack | undefined;
-if (apiDomainName) {
-  certificateStack = new CertificateStack(app, 'CertificateStack', {
-    env,
-    description: 'ACM Certificate for API Gateway custom domain',
-    domainName: apiDomainName,
-  });
-}
+// if (apiDomainName) {
+//   certificateStack = new CertificateStack(app, 'CertificateStack', {
+//     env,
+//     description: 'ACM Certificate for API Gateway custom domain',
+//     domainName: apiDomainName,
+//   });
+// }
 
 // Frontend Stack: S3 static website hosting (Cloudflare handles CDN/SSL)
 new FrontendStack(app, 'FrontendStack', {
@@ -35,21 +35,21 @@ new FrontendStack(app, 'FrontendStack', {
 });
 
 // API Stack: API Gateway + Lambda
-const apiStack = new ApiStack(app, 'ApiStack', {
-  env,
-  description: 'API infrastructure: API Gateway and Lambda functions',
-  domainName: apiDomainName,
-  certificate: certificateStack?.certificate,
-  // Restrict CORS to your domain in production
-  allowedOrigins: config.domainName
-    ? [`https://${config.domainName}`, `https://www.${config.domainName}`]
-    : undefined,
-});
+// const apiStack = new ApiStack(app, 'ApiStack', {
+//   env,
+//   description: 'API infrastructure: API Gateway and Lambda functions',
+//   domainName: apiDomainName,
+//   certificate: certificateStack?.certificate,
+//   // Restrict CORS to your domain in production
+//   allowedOrigins: config.domainName
+//     ? [`https://${config.domainName}`, `https://www.${config.domainName}`]
+//     : undefined,
+// });
 
 // Add dependency if certificate exists
-if (certificateStack) {
-  apiStack.addDependency(certificateStack);
-}
+// if (certificateStack) {
+//   apiStack.addDependency(certificateStack);
+// }
 
 // Add tags to all resources
 cdk.Tags.of(app).add('Project', 'MyWebsite');
