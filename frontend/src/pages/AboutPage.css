@@ -1,20 +1,90 @@
+.about-hero {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 215, 150, 0.45), transparent 40%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 236, 0.92));
+  box-shadow: 0 24px 60px rgba(160, 105, 30, 0.12);
+  overflow: hidden;
+}
+
+.about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a36517;
+  margin-bottom: 0.85rem;
+}
+
+.about-content h2 {
+  margin-bottom: 1rem;
+}
+
+.about-image-card {
+  width: min(100%, 320px);
+  padding: 0.9rem;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.82), rgba(242, 201, 118, 0.3));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.about-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.about-content .subtitle {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #7b4a10;
+  margin-bottom: 1rem;
+}
+
+.skills-section {
+  margin-top: 2.5rem;
+}
+
 .skills-heading {
   font-size: 1.5rem;
-  color: #415a77;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  color: #7b4a10;
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
 .skills {
   background: white;
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(87, 56, 18, 0.08);
+  border: 1px solid rgba(200, 130, 30, 0.08);
 }
 
 .skills h3 {
-  color: #415a77;
+  color: #7b4a10;
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
 }
@@ -27,9 +97,9 @@
 }
 
 .skills li {
-  background: linear-gradient(135deg, #415a7715 0%, #778da915 100%);
-  border: 1px solid #415a7730;
-  color: #1b263b;
+  background: linear-gradient(135deg, rgba(200, 130, 30, 0.08) 0%, rgba(244, 165, 60, 0.15) 100%);
+  border: 1px solid rgba(200, 130, 30, 0.18);
+  color: #5b3810;
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -38,7 +108,31 @@
 }
 
 .skills li:hover {
-  background: linear-gradient(135deg, #415a7725 0%, #778da925 100%);
-  border-color: #415a7750;
+  background: linear-gradient(135deg, rgba(200, 130, 30, 0.14) 0%, rgba(244, 165, 60, 0.24) 100%);
+  border-color: rgba(200, 130, 30, 0.3);
   transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-hero {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .about-image-card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
 }

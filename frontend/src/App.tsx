@@ -10,27 +10,31 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <h1>Rohit Shetty</h1>
-        <nav className="nav">
-          <button
-            className={activeSection === 'about' ? 'active' : ''}
-            onClick={() => setActiveSection('about')}
-          >
-            About
-          </button>
-          {/* <button
-            className={activeSection === 'projects' ? 'active' : ''}
-            onClick={() => setActiveSection('projects')}
-          >
-            Projects
-          </button> */}
-          <button
-            className={activeSection === 'contact' ? 'active' : ''}
-            onClick={() => setActiveSection('contact')}
-          >
-            Contact
-          </button>
-        </nav>
+        <div className="header-shell">
+          <div className="brand-block">
+             <p className="brand-kicker">Rohit Shetty</p>
+          </div>
+          <nav className="nav" aria-label="Primary">
+            <button
+              className={activeSection === 'about' ? 'active' : ''}
+              onClick={() => setActiveSection('about')}
+            >
+              About
+            </button>
+            {/* <button
+              className={activeSection === 'projects' ? 'active' : ''}
+              onClick={() => setActiveSection('projects')}
+            >
+              Projects
+            </button> */}
+            <button
+              className={activeSection === 'contact' ? 'active' : ''}
+              onClick={() => setActiveSection('contact')}
+            >
+              Contact
+            </button>
+          </nav>
+        </div>
       </header>
 
       <main className="main">
@@ -40,7 +44,15 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Rohit. All rights reserved.</p>
+        <div className="footer-shell">
+          <p className="footer-title">Rohit Shetty</p>
+          <p className="footer-copy">
+            Software professional focused on building great products.
+          </p>
+          <p className="footer-meta">
+            &copy; {new Date().getFullYear()} All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );

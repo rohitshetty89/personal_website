@@ -9,66 +9,90 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   color: rgba(50, 40, 30);
-  background-color: rgba(255, 245, 230);
+  background:
+    radial-gradient(circle at top, rgba(255, 214, 153, 0.45), transparent 25%),
+    linear-gradient(180deg, rgba(255, 248, 240) 0%, rgba(255, 243, 225) 58%, rgba(255, 251, 244) 100%);
 }
 
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
 }
 
-/* Header */
 .header {
-  background: linear-gradient(135deg, rgba(200, 130, 30) 0%, rgba(244, 165, 60) 100%);
-  color: white;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+}
+
+.header-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(255, 252, 247, 0.78);
+  border: 1px solid rgba(176, 112, 35, 0.12);
+  box-shadow: 0 16px 40px rgba(93, 62, 20, 0.08);
+  backdrop-filter: blur(16px);
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 5.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  color: #3e2405;
 }
 
-/* Navigation */
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.brand-kicker {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #a36517;
+  font-weight: 700;
+}
+
 .nav {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.6rem;
   flex-wrap: wrap;
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: rgba(244, 230, 206, 0.8);
+  border: 1px solid rgba(176, 112, 35, 0.1);
 }
 
 .nav button {
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 25px;
+  border: 0;
+  color: #7a4b16;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .nav button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: white;
+  background: rgba(255, 255, 255, 0.7);
+  color: #4f2e08;
 }
 
 .nav button.active {
-  background: white;
-  color: rgba(200, 130, 30);
-  border-color: white;
-}
-
-/* Main Content */
-.main {
-  flex: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  width: 100%;
+  background: linear-gradient(135deg, rgba(200, 130, 30), rgba(226, 150, 47));
+  color: white;
+  box-shadow: 0 10px 24px rgba(200, 130, 30, 0.2);
 }
 
 .section {
@@ -101,31 +125,93 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Footer */
+.main {
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  width: 100%;
+}
+
 .footer {
-  background: rgba(200, 130, 30);
-  color: #e0e1dd;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.9rem;
+  width: 100%;
+}
+
+.footer-shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid rgba(176, 112, 35, 0.14);
+  color: #6d4719;
+}
+
+.footer-title,
+.footer-copy,
+.footer-meta {
+  margin: 0;
+}
+
+.footer-title {
+  font-weight: 700;
+  color: #3e2405;
+}
+
+.footer-copy,
+.footer-meta {
+  font-size: 0.95rem;
+  color: rgba(77, 52, 20, 0.78);
 }
 
 /* Responsive */
+@media (max-width: 780px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header-shell,
+  .footer-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-shell,
+  .footer-shell {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .header h1 {
-    font-size: 2rem;
+    font-size: 8rem;
   }
 
   .nav button {
-    padding: 0.4rem 1rem;
+    flex: 1;
+    min-width: 0;
+    padding: 0.7rem 0.9rem;
     font-size: 0.9rem;
+    text-align: center;
   }
 
   .main {
-    padding: 2rem 1rem;
+    padding: 1.5rem 0 2.5rem;
   }
 
   .section h2 {
     font-size: 1.5rem;
+  }
+
+  .footer-copy,
+  .footer-meta {
+    font-size: 0.88rem;
   }
 }
