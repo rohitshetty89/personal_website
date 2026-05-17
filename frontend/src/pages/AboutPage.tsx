@@ -25,7 +25,7 @@ function AboutPage() {
       <div className="skills-section">
         <h3 className="skills-heading">Skills</h3>
         <div className="skills-grid">
-          <div className="skills">
+          {/* <div className="skills">
             <h3>Engineering Leadership</h3>
             <ul>
               <li>Strategic Planning</li>
@@ -36,7 +36,7 @@ function AboutPage() {
               <li>Analytics</li>
               <li>Product Development</li>
             </ul>
-          </div>
+          </div> */}
 
           <div className="skills">
             <h3>Cloud & Infrastructure</h3>

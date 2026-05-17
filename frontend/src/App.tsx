@@ -49,9 +49,6 @@ function App() {
           <p className="footer-copy">
             Software professional focused on building great products.
           </p>
-          <p className="footer-meta">
-            &copy; {new Date().getFullYear()} All rights reserved.
-          </p>
         </div>
       </footer>
     </div>
